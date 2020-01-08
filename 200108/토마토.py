@@ -1,14 +1,21 @@
 # 백준 7569번
+# 틀림
+# 반례
+# 5 3 1
+# 0 0 0 0 0
+# 0 1 0 1 0
+# 0 0 0 0 0
 
+from collections import deque
 
 def f(h, i, j):
-    q = []
+    q = deque()
 
     q.append((h, i, j))
     visited[h][i][j] = 0
 
     while q:
-        h, i, j = q.pop(0)
+        h, i, j = q.popleft()
         for k in range(4):
             ni = i + di[k]
             nj = j + dj[k]
